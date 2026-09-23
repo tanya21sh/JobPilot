@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: jobpilot-postgres
+    environment:
+      POSTGRES_DB: jobpilot
+      POSTGRES_USER: jobpilot
+      POSTGRES_PASSWORD: jobpilot
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
